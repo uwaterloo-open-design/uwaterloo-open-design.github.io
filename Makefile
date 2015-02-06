@@ -1,6 +1,7 @@
 soft-mv = [ -a $(1) ] && mv -r $(1) $(2)
 
 all:
+	find $(PWD) -regex ".*html?" -exec tidy -indent -modify -quiet {} \;
 	$(call soft-mv  _site/CNAME tmp)
 	$(call soft-mv  _site/README.md tmp)
 

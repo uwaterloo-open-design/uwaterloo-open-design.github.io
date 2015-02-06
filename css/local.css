@@ -18,7 +18,7 @@
 
 /* #Basic Styles
 ================================================== */
-	body {
+  body {
     font-family: "Lora", "Georgia", "Times New Roman", serif;
     color:#757575;
   }
@@ -39,7 +39,7 @@
 
 /* #Typography
 ================================================== */
-	h1, h2, h3, h4, h5, h6 {
+  h1, h2, h3, h4, h5, h6 {
     font-family: "Linux Biolinum", sans-serif;
   }
 
@@ -49,10 +49,6 @@
     font-style: italic;
   }
   blockquote { margin: 0 0 20px; padding: 9px 20px 0 19px; border-left: 1px solid #ddd; }
-
-  .highlight {
-    color:#ba9d3b;
-  }
 
 /* #Links
 ================================================== */
@@ -71,6 +67,12 @@
   .homelink {
     border: none;
   }
+
+  .highlight {
+    color:#ba9d3b;
+    border: none;
+  }
+
 
 /* #Lists
 ================================================== */
