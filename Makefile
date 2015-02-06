@@ -35,6 +35,6 @@ distclean: clean
 	rm *.hp
 
 push: all
-	git subtree push --prefix _site origin gh-pages
+	git subtree push --prefix _site origin master
 
 .PHONY: all clean distclean push
