@@ -30,12 +30,9 @@ main = hakyll $ do
     match "index.html" $ do
         route idRoute
         compile $ do
-            let indexCtx = field "posts" $ \_ ->
-                                postList $ recentFirst
-
             getResourceBody
-                >>= applyAsTemplate indexCtx
-                >>= loadAndApplyTemplate "templates/default.html" postCtx
+                >>= applyAsTemplate postCtx
+                >>= loadAndApplyTemplate "templates/default.html" indexCtx
                 >>= relativizeUrls
                 >>= cleanIndexUrls
 
@@ -57,6 +54,12 @@ cleanIndexUrls = return . fmap (withUrls clean)
         clean url
             | idx `isSuffixOf` url = take (length url - length idx) url
             | otherwise            = url
+
+
+indexCtx :: Context String
+indexCtx =
+    constField "title" "uWaterloo Open Design Consortium" `mappend`
+    defaultContext
 
 postCtx :: Context String
 postCtx =
